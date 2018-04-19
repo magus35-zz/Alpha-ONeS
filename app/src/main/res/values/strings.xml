@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">ONeS</string>
+  <string name="facebook_app_id">164581964246367</string>
+  <string name="fb_login_protocol_scheme">fb164581964246367</string>
+</resources>
