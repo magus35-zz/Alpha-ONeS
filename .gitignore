@@ -29,9 +29,6 @@ proguard/
 # Eclipse Metadata
 .metadata/
 
-IntelliJ
-*.iml
-
 # Mac OS X clutter
 *.DS_Store
 
