@@ -17,7 +17,7 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.newTask
 
 class SignInActivity : AppCompatActivity() {
-
+//firebase signin
     private val RC_SIGN_IN = 1
     private val signInProviders =
             listOf(AuthUI.IdpConfig.EmailBuilder()
@@ -46,7 +46,7 @@ class SignInActivity : AppCompatActivity() {
 
             if(resultCode == Activity.RESULT_OK){
                 val progressDialog = indeterminateProgressDialog("Setting up your account")
-
+            // initialize user in firestore
                 FirestoreUtil.initCurrentUserIfFirstTime {
                     startActivity(intentFor<MainActivity>().newTask().clearTask())
                 progressDialog.dismiss()

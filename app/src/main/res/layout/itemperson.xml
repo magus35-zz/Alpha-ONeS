@@ -71,7 +71,7 @@
 
             android:textAppearance="@style/Base.TextAppearance.AppCompat"
 
-            tools:text="Reso Coder"
+            tools:text="Anna Faris"
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@id/imageView_profile_picture" />
 
@@ -97,7 +97,7 @@
 
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
 
-            tools:text="Reso Coder"
+            tools:text="Super Hero By Day"
             android:layout_marginLeft="2dp"
             android:layout_alignLeft="@+id/textView_name" />
 

@@ -11,10 +11,13 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         FirebaseApp.initializeApp(this);
+
     if(FirebaseAuth.getInstance().currentUser == null)
         startActivity<SignInActivity>()
     else
         startActivity<MainActivity>()
     finish()
+
+        //sends to
     }
 }
