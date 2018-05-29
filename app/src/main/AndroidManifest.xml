@@ -41,7 +41,9 @@
         </activity>
         <activity android:name=".UserMatchingView" />
         <activity android:name=".EventMatchingView" />
-        <activity android:name=".EventHolder"></activity>
+        <activity android:name=".EventHolder" />
+        <activity android:name=".UserBack" />
+        <activity android:name=".eventback"></activity>
     </application>
 
 </manifest>
