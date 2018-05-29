@@ -1,17 +1,20 @@
 package edu.csueastbay.horizon.lucifer.ones;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Display;
+
+import android.content.Context;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.huxq17.swipecardsview.BaseCardAdapter;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class UserMatchingView extends BaseCardAdapter {
 
     private List<Model> modelList;
+    private Context context;
 
 
     @Override
@@ -30,5 +33,11 @@ public class UserMatchingView extends BaseCardAdapter {
         {
             return;
         }
+
+        ImageView imageView = (ImageView) cardview.findViewById(R.id.imageView);
+        TextView textView = (TextView) cardview.findViewById(R.id.textView);
+        Model model = modelList.get(position);
+        textView.setText(model.getTitle());
+        Picasso.with(context).load(model.getImage()).into(imageView);
     }
 }

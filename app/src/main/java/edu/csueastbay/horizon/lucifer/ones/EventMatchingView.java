@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.huxq17.swipecardsview.BaseCardAdapter;
 import com.squareup.picasso.Picasso;
-import edu.csueastbay.horizon.lucifer.ones.R;
+
 
 
 import java.util.List;
@@ -42,5 +42,10 @@ public class EventMatchingView extends BaseCardAdapter {
         {
             return;
         }
+        ImageView imageView = (ImageView) cardview.findViewById(R.id.imageView);
+        TextView textView = (TextView) cardview.findViewById(R.id.textView);
+        Model model = modelList.get(position);
+        textView.setText(model.getTitle());
+        Picasso.with(context).load(model.getImage()).into(imageView);
     }
 }
