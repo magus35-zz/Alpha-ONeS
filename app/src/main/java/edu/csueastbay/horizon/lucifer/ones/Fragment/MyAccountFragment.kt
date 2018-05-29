@@ -59,7 +59,7 @@ class MyAccountFragment : Fragment() {
 
                 }
 
-                startActivityForResult(Intent.createChooser(intent, "Select Image"), RC_SELECT_IMAGE)
+                startActivityForResult(Intent.createChooser(intent, "Select ImageType"), RC_SELECT_IMAGE)
 
             }
 

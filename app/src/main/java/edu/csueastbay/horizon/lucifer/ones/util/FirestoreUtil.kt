@@ -8,10 +8,8 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.xwray.groupie.kotlinandroidextensions.Item
-import edu.csueastbay.horizon.lucifer.ones.model.ChatPortal
-import edu.csueastbay.horizon.lucifer.ones.model.MessageType
-import edu.csueastbay.horizon.lucifer.ones.model.MessageTypeSent
-import edu.csueastbay.horizon.lucifer.ones.model.TestType
+import edu.csueastbay.horizon.lucifer.ones.model.*
+import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.ImageItem
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.PersonItem
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.TextItem
 
@@ -134,7 +132,7 @@ object FirestoreUtil{
                         if (it["type"] == MessageType.TEXT)
                             items.add(TextItem(it.toObject(TestType::class.java)!!, context))
                         else
-                            //items.add(ImageMessageItem(it.toObject(ImageMessage::class.java)!!, context))
+                            items.add(ImageItem(it.toObject(ImageType::class.java)!!, context))
                         return@forEach
                     }
                     onListen(items)

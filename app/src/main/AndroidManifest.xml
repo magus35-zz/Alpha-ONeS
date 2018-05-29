@@ -51,8 +51,8 @@
             android:name=".MainActivity"
             android:label="ONeS Messaging" />
         <activity
-            android:name=".SignInActivity"
-            android:theme="@style/SplashTheme" />
+            android:name=".SignInActivity"/>
+
         <activity android:name=".ChatActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
