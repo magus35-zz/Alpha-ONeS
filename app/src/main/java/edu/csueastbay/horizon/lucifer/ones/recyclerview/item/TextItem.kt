@@ -7,14 +7,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import edu.csueastbay.horizon.lucifer.ones.R
-import edu.csueastbay.horizon.lucifer.ones.model.Text
+import edu.csueastbay.horizon.lucifer.ones.model.TestType
 import kotlinx.android.synthetic.main.itemtext.*
 import org.jetbrains.anko.backgroundResource
 import org.jetbrains.anko.wrapContent
 import java.text.SimpleDateFormat
 
 
-class TextItem(val message: Text,
+class TextItem(val message: TestType,
                val context: Context)
 
     : Item() {

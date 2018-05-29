@@ -11,7 +11,7 @@ import com.xwray.groupie.Section
 import com.xwray.groupie.ViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 import edu.csueastbay.horizon.lucifer.ones.model.MessageType
-import edu.csueastbay.horizon.lucifer.ones.model.Text
+import edu.csueastbay.horizon.lucifer.ones.model.TestType
 import kotlinx.android.synthetic.main.activity_chat_.*
 import java.util.*
 
@@ -35,7 +35,7 @@ class ChatActivity : AppCompatActivity() {
 
             imageView_send.setOnClickListener {
                 val messageToSend =
-                        Text(editText_message.text.toString(), Calendar.getInstance().time,
+                        TestType(editText_message.text.toString(), Calendar.getInstance().time,
                                 FirebaseAuth.getInstance().currentUser!!.uid, MessageType.TEXT)
                 //get edit text and set to string
                 editText_message.setText("")

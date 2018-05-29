@@ -3,7 +3,6 @@ package edu.csueastbay.horizon.lucifer.ones.Fragment
 
 
 
-import edu.csueastbay.horizon.lucifer.ones.R
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -19,6 +18,7 @@ import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import edu.csueastbay.horizon.lucifer.ones.AppConstants
 import edu.csueastbay.horizon.lucifer.ones.ChatActivity
+import edu.csueastbay.horizon.lucifer.ones.R
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.PersonItem
 import kotlinx.android.synthetic.main.fragment_people.*
 import org.jetbrains.anko.support.v4.startActivity
@@ -78,10 +78,10 @@ class  PeopleFragment : Fragment() {
     }
 
     private val onItemClick = OnItemClickListener { item, view ->
-        if (item is PersonItem){
+        if (item is PersonItem) {
             startActivity<ChatActivity>(
-                    AppConstants.USER_ID to item.person.name,
-                    AppConstants.USER_NAME to item.userId
+                    AppConstants.USER_ID to item.userId,
+                    AppConstants.USER_NAME to item.person.name
             )
 
         }

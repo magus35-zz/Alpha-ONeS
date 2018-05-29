@@ -2,13 +2,12 @@ package edu.csueastbay.horizon.lucifer.ones
 
 import android.app.Activity
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import com.example.lindsey.onesmessaging.util.FirestoreUtil
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
-import edu.csueastbay.horizon.lucifer.ones.R
 import kotlinx.android.synthetic.main.activity_signin.*
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.design.longSnackbar
@@ -32,7 +31,7 @@ class SignInActivity : AppCompatActivity() {
         account_sign_in.setOnClickListener{
             val intent = AuthUI.getInstance().createSignInIntentBuilder()
                     .setAvailableProviders(signInProviders)
-                    .setLogo(R.drawable.oneslogo)
+                    .setLogo(R.drawable.logo)
                     .build()
             startActivityForResult(intent,RC_SIGN_IN)
         }

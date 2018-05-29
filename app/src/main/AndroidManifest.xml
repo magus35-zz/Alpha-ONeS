@@ -52,7 +52,7 @@
             android:label="ONeS Messaging" />
         <activity
             android:name=".SignInActivity"
-            android:label="Start sending messages" />
+            android:theme="@style/SplashTheme" />
         <activity android:name=".ChatActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

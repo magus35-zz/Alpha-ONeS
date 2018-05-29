@@ -3,7 +3,7 @@
 
         <item android:drawable="@android:color/white"/>
         <item>
-            <bitmap android:src="@drawable/oneslogo"
+            <bitmap android:src="@drawable/splashback"
                 android:gravity="center"/>
         </item>
 </layer-list>

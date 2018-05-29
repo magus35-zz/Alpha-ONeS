@@ -1,6 +1,5 @@
 package com.example.lindsey.onesmessaging.util
 
-import android.app.Notification
 import android.content.Context
 import android.util.Log
 import com.example.lindsey.onesmessaging.model.User
@@ -12,10 +11,9 @@ import com.xwray.groupie.kotlinandroidextensions.Item
 import edu.csueastbay.horizon.lucifer.ones.model.ChatPortal
 import edu.csueastbay.horizon.lucifer.ones.model.MessageType
 import edu.csueastbay.horizon.lucifer.ones.model.MessageTypeSent
-import edu.csueastbay.horizon.lucifer.ones.model.Text
+import edu.csueastbay.horizon.lucifer.ones.model.TestType
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.PersonItem
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.TextItem
-import java.security.AccessControlContext
 
 object FirestoreUtil{
         private val firestoreInstance: FirebaseFirestore by lazy { FirebaseFirestore.getInstance()}
@@ -134,7 +132,7 @@ object FirestoreUtil{
                     val items = mutableListOf<Item>()
                     querySnapshot!!.documents.forEach {
                         if (it["type"] == MessageType.TEXT)
-                            items.add(TextItem(it.toObject(Text::class.java)!!, context))
+                            items.add(TextItem(it.toObject(TestType::class.java)!!, context))
                         else
                             //items.add(ImageMessageItem(it.toObject(ImageMessage::class.java)!!, context))
                         return@forEach

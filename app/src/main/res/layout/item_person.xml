@@ -70,7 +70,7 @@
 
             android:textAppearance="@style/Base.TextAppearance.AppCompat"
 
-            tools:text="Reso Coder" />
+            tools:text="Allie" />
 
 
 
@@ -94,7 +94,7 @@
 
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
 
-            tools:text="Reso Coder" />
+            tools:text="Allie May" />
 
     </RelativeLayout>
 
