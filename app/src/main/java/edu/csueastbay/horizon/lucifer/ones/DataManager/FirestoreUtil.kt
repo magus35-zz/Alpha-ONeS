@@ -25,7 +25,7 @@ object FirestoreUtil{
     fun initCurrentUserIfFirstTime(onComplete: () -> Unit){
         currentUserDocRef.get().addOnSuccessListener{documentSnapshot ->
             if(!documentSnapshot.exists()){
-                val newUser = UserType(FirebaseAuth.getInstance().currentUser?.displayName ?: "",
+                val newUser = UserType(FirebaseAuth.getInstance().currentUser?.displayName ?: "","",
                         "", null)
                 currentUserDocRef.set(newUser).addOnSuccessListener {
                     onComplete()

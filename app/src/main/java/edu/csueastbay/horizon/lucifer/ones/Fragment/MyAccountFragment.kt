@@ -1,35 +1,28 @@
 package edu.csueastbay.horizon.lucifer.ones.Fragment
 
 
-import android.os.Bundle
+import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.os.Bundle
+import android.provider.MediaStore
+import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.app.Activity
-import android.graphics.Bitmap
-import android.provider.MediaStore
-import android.support.v4.app.Fragment
-
 import com.example.lindsey.onesmessaging.util.FirestoreUtil
+import com.example.lindsey.onesmessaging.util.StorageUtil
 import com.firebase.ui.auth.AuthUI
+import edu.csueastbay.horizon.lucifer.ones.Glide.GlideApp
 import edu.csueastbay.horizon.lucifer.ones.R
 import edu.csueastbay.horizon.lucifer.ones.SignInActivity
-
 import kotlinx.android.synthetic.main.fragment_my_account.*
 import kotlinx.android.synthetic.main.fragment_my_account.view.*
-import java.io.ByteArrayOutputStream
-
-import com.example.lindsey.onesmessaging.util.StorageUtil
-import edu.csueastbay.horizon.lucifer.ones.Glide.GlideApp
-
-
 import org.jetbrains.anko.clearTask
-import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.newTask
 import org.jetbrains.anko.support.v4.intentFor
 import org.jetbrains.anko.support.v4.toast
-import org.jetbrains.anko.toast
+import java.io.ByteArrayOutputStream
 
 
 class MyAccountFragment : Fragment() {
@@ -69,14 +62,14 @@ class MyAccountFragment : Fragment() {
 
                 if (::selectedImageBytes.isInitialized)
                     StorageUtil.uploadProfilePhoto(selectedImageBytes) { imagePath ->
-                        FirestoreUtil.updateCurrentUser(editText_name.text.toString(),
-                                editText_bio.text.toString(), imagePath)
+                        FirestoreUtil.updateCurrentUser(editText_name.text.toString(), editText_age.text.toString(),
+                                editText_bio.text.toString(),  imagePath)
                     }
 
                 else
 
-                    FirestoreUtil.updateCurrentUser(editText_name.text.toString(),
-                            editText_bio.text.toString(), null)
+                    FirestoreUtil.updateCurrentUser(editText_name.text.toString(),editText_age.text.toString(),
+                            editText_bio.text.toString(),  null)
                 toast("Saving")
 
             }
@@ -132,6 +125,7 @@ class MyAccountFragment : Fragment() {
             if (this@MyAccountFragment.isVisible) {
                 editText_name.setText(user.name)
                 editText_bio.setText(user.bio)
+                editText_age.setText(user.age)
 
               if (!pictureJustChanged && user.profilePicturePath != null)
                     GlideApp.with(this)
