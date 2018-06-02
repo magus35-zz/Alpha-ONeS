@@ -3,7 +3,7 @@ package edu.csueastbay.horizon.lucifer.ones.recyclerview.item
 import android.content.Context
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import edu.csueastbay.horizon.lucifer.ones.R
-import edu.csueastbay.horizon.lucifer.ones.model.TestType
+import edu.csueastbay.horizon.lucifer.ones.systemTypes.TestType
 import kotlinx.android.synthetic.main.itemtext.*
 
 

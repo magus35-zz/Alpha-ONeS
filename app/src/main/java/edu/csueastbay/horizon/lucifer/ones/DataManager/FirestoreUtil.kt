@@ -2,16 +2,16 @@ package com.example.lindsey.onesmessaging.util
 
 import android.content.Context
 import android.util.Log
-import com.example.lindsey.onesmessaging.model.User
+import com.example.lindsey.onesmessaging.model.UserType
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.xwray.groupie.kotlinandroidextensions.Item
-import edu.csueastbay.horizon.lucifer.ones.model.*
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.ImageItem
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.PersonItem
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.TextItem
+import edu.csueastbay.horizon.lucifer.ones.systemTypes.*
 
 object FirestoreUtil{
         private val firestoreInstance: FirebaseFirestore by lazy { FirebaseFirestore.getInstance()}
@@ -25,7 +25,7 @@ object FirestoreUtil{
     fun initCurrentUserIfFirstTime(onComplete: () -> Unit){
         currentUserDocRef.get().addOnSuccessListener{documentSnapshot ->
             if(!documentSnapshot.exists()){
-                val newUser = User(FirebaseAuth.getInstance().currentUser?.displayName ?: "",
+                val newUser = UserType(FirebaseAuth.getInstance().currentUser?.displayName ?: "",
                         "", null)
                 currentUserDocRef.set(newUser).addOnSuccessListener {
                     onComplete()
@@ -37,20 +37,21 @@ object FirestoreUtil{
         onComplete()
         }
      }
-    fun updateCurrentUser(name:String = "", bio: String ="", profilePicturePath: String? = null) {
+    fun updateCurrentUser(name:String = "", bio: String ="", age: String ="", profilePicturePath: String? = null) {
        //may need to update some part of the user
         val userFieldMap = mutableMapOf<String, Any>()
         if(name.isNotBlank()) userFieldMap["name"]= name
         if(bio.isNotBlank()) userFieldMap["bio"]= bio
+        if(name.isNotBlank()) userFieldMap["age"] = age
         if(profilePicturePath != null)
             userFieldMap["profilePicturePath"]= profilePicturePath
         currentUserDocRef.update(userFieldMap)
 
     }
-    fun getCurrentUser(onComplete: (User) -> Unit){
+    fun getCurrentUser(onComplete: (UserType) -> Unit){
         currentUserDocRef.get()
                 .addOnSuccessListener {
-                    onComplete(it.toObject(User::class.java)!!)
+                    onComplete(it.toObject(UserType::class.java)!!)
 
                 }
     }
@@ -68,7 +69,7 @@ object FirestoreUtil{
 
                     querySnapshot!!.documents.forEach {
                         if (it.id != FirebaseAuth.getInstance().currentUser?.uid)
-                            items.add(PersonItem(it.toObject(User::class.java)!!, it.id, context))
+                            items.add(PersonItem(it.toObject(UserType::class.java)!!, it.id, context))
                     }
                     onListen(items)
                 }

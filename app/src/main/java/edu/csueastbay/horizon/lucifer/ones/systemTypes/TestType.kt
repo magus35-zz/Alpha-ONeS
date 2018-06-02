@@ -1,4 +1,4 @@
-package edu.csueastbay.horizon.lucifer.ones.model
+package edu.csueastbay.horizon.lucifer.ones.systemTypes
 import java.util.*
 
 

@@ -15,9 +15,9 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Section
 import com.xwray.groupie.ViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
-import edu.csueastbay.horizon.lucifer.ones.model.ImageType
-import edu.csueastbay.horizon.lucifer.ones.model.MessageType
-import edu.csueastbay.horizon.lucifer.ones.model.TestType
+import edu.csueastbay.horizon.lucifer.ones.systemTypes.ImageType
+import edu.csueastbay.horizon.lucifer.ones.systemTypes.MessageType
+import edu.csueastbay.horizon.lucifer.ones.systemTypes.TestType
 import kotlinx.android.synthetic.main.activity_chat_.*
 import java.io.ByteArrayOutputStream
 import java.util.*

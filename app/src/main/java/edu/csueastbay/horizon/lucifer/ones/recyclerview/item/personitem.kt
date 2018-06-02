@@ -10,12 +10,12 @@ import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 
 import kotlinx.android.synthetic.main.item_person.*
-import com.example.lindsey.onesmessaging.model.User
+import com.example.lindsey.onesmessaging.model.UserType
 import com.example.lindsey.onesmessaging.util.StorageUtil
 import edu.csueastbay.horizon.lucifer.ones.Glide.GlideApp
 import edu.csueastbay.horizon.lucifer.ones.R
 
-class PersonItem(val person: User,
+class PersonItem(val person: UserType,
                  //id from firebaseAuth
                  val userId: String,
                  private val context: Context)

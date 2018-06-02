@@ -39,7 +39,7 @@
         <activity android:name=".EventMatchingView" />
         <activity android:name=".EventHolder" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".TransferActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

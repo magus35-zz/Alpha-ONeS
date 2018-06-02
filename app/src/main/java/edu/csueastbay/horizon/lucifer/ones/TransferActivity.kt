@@ -6,7 +6,7 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.startActivity
 
-class SplashActivity : AppCompatActivity() {
+class TransferActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

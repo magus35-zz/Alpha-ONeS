@@ -6,7 +6,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import edu.csueastbay.horizon.lucifer.ones.R
-import edu.csueastbay.horizon.lucifer.ones.model.MessageTypeSent
+import edu.csueastbay.horizon.lucifer.ones.systemTypes.MessageTypeSent
 import kotlinx.android.synthetic.main.itemtext.*
 import org.jetbrains.anko.backgroundResource
 import org.jetbrains.anko.wrapContent

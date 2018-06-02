@@ -5,8 +5,7 @@ import com.example.lindsey.onesmessaging.util.StorageUtil
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import edu.csueastbay.horizon.lucifer.ones.Glide.GlideApp
 import edu.csueastbay.horizon.lucifer.ones.R
-import edu.csueastbay.horizon.lucifer.ones.model.ImageType
-import edu.csueastbay.horizon.lucifer.ones.model.TestType
+import edu.csueastbay.horizon.lucifer.ones.systemTypes.ImageType
 import kotlinx.android.synthetic.main.itemimmagemessage.*
 
 class ImageItem(val message: ImageType,
