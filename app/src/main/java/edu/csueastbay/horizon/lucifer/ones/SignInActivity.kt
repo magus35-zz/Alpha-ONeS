@@ -2,24 +2,30 @@ package edu.csueastbay.horizon.lucifer.ones
 
 import android.app.Activity
 import android.content.Intent
+import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import bolts.Task
 import com.example.lindsey.onesmessaging.util.FirestoreUtil
+import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
 import kotlinx.android.synthetic.main.activity_signin.*
-import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.design.longSnackbar
-import org.jetbrains.anko.indeterminateProgressDialog
-import org.jetbrains.anko.intentFor
-import org.jetbrains.anko.newTask
 import com.facebook.FacebookException
 import com.facebook.login.LoginResult
 import com.facebook.FacebookCallback
 import com.facebook.login.LoginManager
-import org.jetbrains.anko.toast
+import com.google.firebase.auth.AuthCredential
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FacebookAuthProvider
+import com.google.firebase.auth.FirebaseAuth
+import android.widget.Toast
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.FirebaseUser
+import org.jetbrains.anko.*
 
 
 class SignInActivity : AppCompatActivity() {
@@ -30,6 +36,9 @@ class SignInActivity : AppCompatActivity() {
                     .setAllowNewAccounts(true)
                     .setRequireName(true)
                     .build())
+
+    //for facebook login
+    private var auth:FirebaseAuth = FirebaseAuth.getInstance()
     private var callbackManager = CallbackManager.Factory.create()
 
 
@@ -46,26 +55,26 @@ class SignInActivity : AppCompatActivity() {
         }
 
         //handle Facebook Login
+        login_button.setReadPermissions("email", "public_profile")
         LoginManager.getInstance().registerCallback(callbackManager,
             object : FacebookCallback<LoginResult> {
                 override fun onSuccess(loginResult: LoginResult) {
-                    toast("onSuccess")
+                    handleFacebookAccessToken(loginResult.accessToken)
                 }
-
                 override fun onCancel() {
-                    toast("onCancel")
+                    toast("Facebook Login Cancelled")
                 }
-
                 override fun onError(exception: FacebookException) {
-                    toast("onError")
+                    toast(exception.localizedMessage)
                 }
             })
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-      callbackManager.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)
+        callbackManager.onActivityResult(requestCode, resultCode, data) //for facebook login
 
+        //handle email signin
         if (requestCode == RC_SIGN_IN){
             val response = IdpResponse.fromResultIntent(data)
 
@@ -76,7 +85,6 @@ class SignInActivity : AppCompatActivity() {
                     startActivity(intentFor<MainActivity>().newTask().clearTask())
                 progressDialog.dismiss()
                 }
-
             }
            else if(resultCode == Activity.RESULT_CANCELED) {
                 if (response == null) return
@@ -89,5 +97,11 @@ class SignInActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun handleFacebookAccessToken(token: AccessToken) {
+        val credential = FacebookAuthProvider.getCredential(token.token)
+        auth.signInWithCredential(credential)
+        startActivity<MainActivity>()
     }
 }

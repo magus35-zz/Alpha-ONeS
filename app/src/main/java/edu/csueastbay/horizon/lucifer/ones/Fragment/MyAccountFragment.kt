@@ -13,6 +13,7 @@ import android.view.ViewGroup
 import com.example.lindsey.onesmessaging.util.FirestoreUtil
 import com.example.lindsey.onesmessaging.util.StorageUtil
 import com.firebase.ui.auth.AuthUI
+import com.google.firebase.auth.FirebaseAuth
 import edu.csueastbay.horizon.lucifer.ones.Glide.GlideApp
 import edu.csueastbay.horizon.lucifer.ones.R
 import edu.csueastbay.horizon.lucifer.ones.SignInActivity
@@ -34,29 +35,22 @@ class MyAccountFragment : Fragment() {
     private lateinit var selectedImageBytes: ByteArray
     private var pictureJustChanged = false
 
+    private var auth:FirebaseAuth = FirebaseAuth.getInstance()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_my_account, container, false)
 
-
-
         view.apply {
-
             imageView_profile_picture.setOnClickListener {
 
                 val intent = Intent().apply {
                     type = "image/*"
                     action = Intent.ACTION_GET_CONTENT
                     putExtra(Intent.EXTRA_MIME_TYPES, arrayOf("image/gif", "image/jpeg", "image/png"))
-
                 }
-
                 startActivityForResult(Intent.createChooser(intent, "Select ImageType"), RC_SELECT_IMAGE)
-
             }
-
-
 
             btn_save.setOnClickListener {
 
@@ -65,13 +59,10 @@ class MyAccountFragment : Fragment() {
                         FirestoreUtil.updateCurrentUser(editText_name.text.toString(), editText_age.text.toString(),
                                 editText_bio.text.toString(),  imagePath)
                     }
-
                 else
-
                     FirestoreUtil.updateCurrentUser(editText_name.text.toString(),editText_age.text.toString(),
                             editText_bio.text.toString(),  null)
                 toast("Saving")
-
             }
 
 
@@ -83,7 +74,6 @@ class MyAccountFragment : Fragment() {
                         .addOnCompleteListener {
                             //prompts to sign in again
                             startActivity(intentFor<SignInActivity>().newTask().clearTask())
-
                         }
             }
         }
@@ -102,8 +92,6 @@ class MyAccountFragment : Fragment() {
             selectedImageBmp.compress(Bitmap.CompressFormat.JPEG, 90, outputStream)
             selectedImageBytes = outputStream.toByteArray()
 
-
-
             GlideApp.with(this)
             //image in memory
                     .load(selectedImageBytes)
@@ -112,34 +100,36 @@ class MyAccountFragment : Fragment() {
             pictureJustChanged = true
 
             pictureJustChanged = true
-
         }
-
     }
-
-
 
     override fun onStart() {
         super.onStart()
-        FirestoreUtil.getCurrentUser { user ->
-            if (this@MyAccountFragment.isVisible) {
-                editText_name.setText(user.name)
-                editText_bio.setText(user.bio)
-                editText_age.setText(user.age)
 
-              if (!pictureJustChanged && user.profilePicturePath != null)
-                    GlideApp.with(this)
-                            .load(StorageUtil.pathToReference(user.profilePicturePath))
-                            .placeholder(R.drawable.ic_account_circle_black_24dp)
-                            .into(imageView_profile_picture)
+        var facebookUser = false
 
-
+        for (data in auth.currentUser!!.providerData) {
+            if (data.providerId.equals("facebook.com")) {
+                editText_name.setText(data.displayName)
+                facebookUser = true
+                break
             }
-
         }
 
+        if (!facebookUser) {
+            FirestoreUtil.getCurrentUser { user ->
+                if (this@MyAccountFragment.isVisible) {
+                    editText_name.setText(user.name)
+                    editText_bio.setText(user.bio)
+                    editText_age.setText(user.age)
+
+                    if (!pictureJustChanged && user.profilePicturePath != null)
+                        GlideApp.with(this)
+                                .load(StorageUtil.pathToReference(user.profilePicturePath))
+                                .placeholder(R.drawable.ic_account_circle_black_24dp)
+                                .into(imageView_profile_picture)
+                }
+            }
+        }
     }
-
-
-
 }
