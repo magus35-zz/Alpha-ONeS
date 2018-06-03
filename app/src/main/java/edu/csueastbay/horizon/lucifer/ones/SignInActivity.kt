@@ -2,6 +2,7 @@ package edu.csueastbay.horizon.lucifer.ones
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -46,10 +47,12 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signin)
 
+        imageView.setBackgroundColor(Color.BLACK)
+
         account_sign_in.setOnClickListener{
             val intent = AuthUI.getInstance().createSignInIntentBuilder()
                     .setAvailableProviders(signInProviders)
-                    .setLogo(R.drawable.logo)
+                    .setLogo(R.drawable.splashback_small)
                     .build()
             startActivityForResult(intent,RC_SIGN_IN)
         }
