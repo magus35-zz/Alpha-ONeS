@@ -1,5 +1,5 @@
-package edu.csueastbay.horizon.lucifer.ones.Glide
-
+package edu.csueastbay.horizon.lucifer.ones.AppGlide
+//how to use glide: https://github.com/bumptech/glide
 
 import android.content.Context
 import com.bumptech.glide.Glide
@@ -12,7 +12,7 @@ import java.io.InputStream
 
 @GlideModule
 //load pictures straight from firebase
-class FireMessageGlideModule: AppGlideModule() {
+class ONeSGlideModule: AppGlideModule() {
     override fun registerComponents(context: Context, glide: Glide, registry: Registry) {
         registry.append(StorageReference::class.java, InputStream::class.java,
                 FirebaseImageLoader.Factory())

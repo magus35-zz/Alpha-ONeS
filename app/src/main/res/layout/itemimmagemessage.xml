@@ -27,7 +27,7 @@
 
         android:layout_gravity="end"
 
-        android:background="@drawable/text_right">
+        android:background="@drawable/background_text_block">
 
         <ImageView
 
@@ -47,7 +47,7 @@
 
             android:paddingTop="4dp"
 
-            tools:src="@drawable/ic_image_black_24dp" />
+            tools:src="@drawable/image_placeholder_pink" />
 
         <TextView
 

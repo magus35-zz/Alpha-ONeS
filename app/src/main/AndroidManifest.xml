@@ -53,7 +53,7 @@
         <activity
             android:name=".SignInActivity"/>
 
-        <activity android:name=".ChatActivity">
+        <activity android:name=".MessagingActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
