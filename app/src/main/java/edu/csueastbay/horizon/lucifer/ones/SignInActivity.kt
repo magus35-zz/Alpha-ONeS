@@ -3,11 +3,9 @@ package edu.csueastbay.horizon.lucifer.ones
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
-import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import bolts.Task
-import com.example.lindsey.onesmessaging.util.FirestoreUtil
+import com.example.lindsey.onesmessaging.util.FirestoreFirebase
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.firebase.ui.auth.AuthUI
@@ -19,13 +17,8 @@ import com.facebook.FacebookException
 import com.facebook.login.LoginResult
 import com.facebook.FacebookCallback
 import com.facebook.login.LoginManager
-import com.google.firebase.auth.AuthCredential
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import android.widget.Toast
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.auth.FirebaseUser
 import org.jetbrains.anko.*
 
 
@@ -84,7 +77,7 @@ class SignInActivity : AppCompatActivity() {
             if(resultCode == Activity.RESULT_OK){
                 val progressDialog = indeterminateProgressDialog("Setting up your account")
             // initialize user in firestore
-                FirestoreUtil.initCurrentUserIfFirstTime {
+                FirestoreFirebase.initCurrentUserIfFirstTime {
                     startActivity(intentFor<MainActivity>().newTask().clearTask())
                 progressDialog.dismiss()
                 }

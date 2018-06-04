@@ -13,7 +13,7 @@ import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.PersonItem
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.TextItem
 import edu.csueastbay.horizon.lucifer.ones.systemTypes.*
 
-object FirestoreUtil{
+object FirestoreFirebase{
         private val firestoreInstance: FirebaseFirestore by lazy { FirebaseFirestore.getInstance()}
         private val currentUserDocRef: DocumentReference
 
@@ -94,7 +94,7 @@ object FirestoreUtil{
                     val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
 
                     val newChannel = chatChannelsCollectionRef.document()
-                    newChannel.set(ChatPortal(mutableListOf(currentUserId, otherUserId)))
+                    newChannel.set(MessageChannel(mutableListOf(currentUserId, otherUserId)))
                     // save the new chat
                     currentUserDocRef
                             .collection("engagedChatChannels")
