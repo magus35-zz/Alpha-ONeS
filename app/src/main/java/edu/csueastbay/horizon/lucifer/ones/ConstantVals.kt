@@ -1,6 +1,6 @@
 package edu.csueastbay.horizon.lucifer.ones
 
-object AppConstants {
+object ConstantVals {
 
     const val USER_NAME = "USER_NAME"
     const val USER_ID = "USER_ID"

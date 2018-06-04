@@ -16,7 +16,7 @@ import com.xwray.groupie.OnItemClickListener
 import com.xwray.groupie.Section
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
-import edu.csueastbay.horizon.lucifer.ones.AppConstants
+import edu.csueastbay.horizon.lucifer.ones.ConstantVals
 import edu.csueastbay.horizon.lucifer.ones.ChatActivity
 import edu.csueastbay.horizon.lucifer.ones.R
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.PersonItem
@@ -80,8 +80,8 @@ class  PeopleFragment : Fragment() {
     private val onItemClick = OnItemClickListener { item, view ->
         if (item is PersonItem) {
             startActivity<ChatActivity>(
-                    AppConstants.USER_ID to item.userId,
-                    AppConstants.USER_NAME to item.person.name
+                    ConstantVals.USER_ID to item.userId,
+                    ConstantVals.USER_NAME to item.person.name
             )
 
         }

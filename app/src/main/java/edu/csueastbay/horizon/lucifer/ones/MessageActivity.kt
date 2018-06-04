@@ -44,9 +44,9 @@ class ChatActivity : AppCompatActivity() {
         // creates a way to go back to the messageing list
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         //the match's name , whom the user is chatting with will appear at the top
-        supportActionBar?.title =intent.getStringExtra(AppConstants.USER_NAME)
+        supportActionBar?.title =intent.getStringExtra(ConstantVals.USER_NAME)
 
-        val otherUserId = intent.getStringExtra(AppConstants.USER_ID)
+        val otherUserId = intent.getStringExtra(ConstantVals.USER_ID)
         // Call firestore so we can get the doc, and we need to remember to
         FirestoreFirebase.getOrCreateChatChannel(otherUserId) { channelId ->
          currentChannelId = channelId   //go to the current chat channel so a random one doesnt appear
