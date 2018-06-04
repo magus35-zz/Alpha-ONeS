@@ -34,9 +34,6 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserMatchingView" />
-        <activity android:name=".EventMatchingView" />
-        <activity android:name=".EventHolder" />
         <activity
             android:name=".TransferActivity"
             android:theme="@style/SplashTheme">

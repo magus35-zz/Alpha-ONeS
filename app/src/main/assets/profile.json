@@ -1,0 +1,26 @@
+[
+  {
+    "url":"http://www.agallonofglitter.com/wp-content/uploads/2017/07/IMG_6764.jpg",
+    "name":"Sasha",
+    "age":28,
+    "location":"Bahamas"
+  },
+  {
+    "url":"http://jablogz.com/wp-content/uploads/2015/08/Alicia-Jamaica.jpg",
+    "name":"Alicia",
+    "age":25,
+    "location":"Jamaica"
+  },
+  {
+    "url":"http://cdn.cavemancircus.com//wp-content/uploads/images/2015/january/pretty_girls_2/pretty_girls_5.jpg",
+    "name":"Carol",
+    "age":19,
+    "location":"New City"
+  },
+  {
+    "url":"http://cdn.cavemancircus.com//wp-content/uploads/images/2015/june/pretty_girls_3/pretty_girls_20.jpg",
+    "name":"Phoebe",
+    "age":22,
+    "location":"New York City"
+  }
+]

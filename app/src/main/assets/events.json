@@ -1,0 +1,20 @@
+[
+  {
+    "url":"https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/sites/2/2018/02/14090403/edc_las_vegas_2018_as_key_art_kineticLOVE_1300x650_r01.jpg",
+    "name":"EDC",
+    "Time":"9pm",
+    "location":"California"
+  },
+  {
+    "url":"https://calgaryartsdevelopment.com/wp-content/uploads/2016/07/Contest-CalgaryReggaeFest.jpg",
+    "name":"ReggaeFest",
+    "Time":"10am",
+    "location":"California"
+  },
+  {
+    "url":"http://ieee.engineering.uky.edu/files/2013/09/IEEEXtreme.png",
+    "name":"IEEEXXTREME",
+    "Time":"6PM",
+    "location":"California"
+  }
+]
