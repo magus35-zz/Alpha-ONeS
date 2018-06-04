@@ -15,7 +15,7 @@ class TransferActivity : AppCompatActivity() {
     if(FirebaseAuth.getInstance().currentUser == null)
         startActivity<SignInActivity>()
     else
-        startActivity<MainActivity>()
+        startActivity<MatchHolder>()
     finish()
 
         //sends to

@@ -63,6 +63,12 @@ public class MatchHolder extends AppCompatActivity implements
             }
         });
 
+        findViewById(R.id.message).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
 
@@ -96,8 +102,6 @@ public class MatchHolder extends AppCompatActivity implements
                     mSwipeView.doSwipe(false);
                 }
             });
-
-
 
 
             findViewById(R.id.acceptBtn).setOnClickListener(new View.OnClickListener() {

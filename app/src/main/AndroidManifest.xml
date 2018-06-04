@@ -48,6 +48,8 @@
             android:label="ONeS Messaging" />
         <activity
             android:name=".SignInActivity"/>
+        <activity
+            android:name=".MatchHolder"/>
 
         <activity android:name=".ChatActivity">
             <meta-data
