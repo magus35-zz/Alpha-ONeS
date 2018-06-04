@@ -48,6 +48,7 @@ class UserModelItem(
         viewHolder.textView_bio.text = person.bio
         // Uploading profile image to layout
 
+
         if (person.profilePicturePath != null)
             GlideApp.with(context)
                     // loads in the image from firestore

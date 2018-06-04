@@ -18,7 +18,8 @@ import java.text.SimpleDateFormat
 
 abstract class MessageItem(private val message: MessageTypeSent)
 
-    : Item() {
+    : Item()
+{
 
 
     // we want to get the viewholder, and then get the text that was sent

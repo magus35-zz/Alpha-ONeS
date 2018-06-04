@@ -18,7 +18,7 @@ import com.xwray.groupie.kotlinandroidextensions.Item
 import edu.csueastbay.horizon.lucifer.ones.MessageTypes.ImageType
 import edu.csueastbay.horizon.lucifer.ones.MessageTypes.MessageType
 import edu.csueastbay.horizon.lucifer.ones.MessageTypes.TestType
-import kotlinx.android.synthetic.main.match_message_list.*
+import kotlinx.android.synthetic.main.match_message.*
 import java.io.ByteArrayOutputStream
 import java.util.*
 
@@ -39,7 +39,7 @@ class MessageActivity : AppCompatActivity() {
     {// overrding on create function to send messages
         super.onCreate(savedInstanceState)
         // pointing to our layout activity message
-        setContentView(R.layout.match_message_list)
+        setContentView(R.layout.match_message)
 
         // creates a way to go back to the messageing list
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

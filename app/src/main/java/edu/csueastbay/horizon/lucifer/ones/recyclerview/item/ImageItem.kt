@@ -12,8 +12,9 @@ import kotlinx.android.synthetic.main.rcv_image.*
 
 // setting up recyclerview ( RV) for sending images
 // need to specify the image type and the conxt of it
-class ImageItem(val message: ImageType,
-               val context: Context)
+class ImageItem(
+        val message: ImageType,
+        val context: Context)
 
 
     : MessageItem(message)
