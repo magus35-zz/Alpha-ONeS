@@ -85,7 +85,7 @@ class SignInActivity : AppCompatActivity() {
                 val progressDialog = indeterminateProgressDialog("Setting up your account")
             // initialize user in firestore
                 FirestoreUtil.initCurrentUserIfFirstTime {
-                    startActivity(intentFor<MatchHolder>().newTask().clearTask())
+                    startActivity(intentFor<MainActivity>().newTask().clearTask())
                 progressDialog.dismiss()
                 }
             }
@@ -105,6 +105,6 @@ class SignInActivity : AppCompatActivity() {
     private fun handleFacebookAccessToken(token: AccessToken) {
         val credential = FacebookAuthProvider.getCredential(token.token)
         auth.signInWithCredential(credential)
-        startActivity<MatchHolder>()
+        startActivity<MainActivity>()
     }
 }
