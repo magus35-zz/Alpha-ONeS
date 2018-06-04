@@ -1,7 +1,7 @@
 package edu.csueastbay.horizon.lucifer.ones.recyclerview.item
 
 import android.content.Context
-import com.example.lindsey.onesmessaging.util.StorageUtil
+import com.example.lindsey.onesmessaging.util.BetaFirestore
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
 import edu.csueastbay.horizon.lucifer.ones.Glide.GlideApp
 import edu.csueastbay.horizon.lucifer.ones.R
@@ -17,7 +17,7 @@ class ImageItem(val message: ImageType,
     override fun bind(viewHolder: ViewHolder, position: Int) {
         super.bind(viewHolder, position)
         GlideApp.with(context)
-                .load(StorageUtil.pathToReference(message.imagePath))
+                .load(BetaFirestore.pathToReference(message.imagePath))
                 .placeholder(R.drawable.ic_image_black_24dp)
                 .into(viewHolder.imageView_message_image)
 

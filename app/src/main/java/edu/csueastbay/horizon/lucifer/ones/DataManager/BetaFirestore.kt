@@ -5,7 +5,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.util.*
 
-object StorageUtil{
+object BetaFirestore{
     private val storageInstance: FirebaseStorage by lazy { FirebaseStorage.getInstance() }
 
 

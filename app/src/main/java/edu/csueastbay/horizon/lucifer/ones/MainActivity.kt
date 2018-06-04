@@ -1,12 +1,11 @@
 package edu.csueastbay.horizon.lucifer.ones
 
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import edu.csueastbay.horizon.lucifer.ones.Fragment.MyAccountFragment
-import edu.csueastbay.horizon.lucifer.ones.Fragment.PeopleFragment
+import edu.csueastbay.horizon.lucifer.ones.Frags.MyAccountFragment
+import edu.csueastbay.horizon.lucifer.ones.Frags.PeopleFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 

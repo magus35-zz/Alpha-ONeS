@@ -1,4 +1,4 @@
-package edu.csueastbay.horizon.lucifer.ones.Fragment
+package edu.csueastbay.horizon.lucifer.ones.Frags
 
 
 
@@ -9,14 +9,14 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.lindsey.onesmessaging.util.FirestoreUtil
+import com.example.lindsey.onesmessaging.util.FirestoreFirebase
 import com.google.firebase.firestore.ListenerRegistration
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.OnItemClickListener
 import com.xwray.groupie.Section
 import com.xwray.groupie.kotlinandroidextensions.Item
 import com.xwray.groupie.kotlinandroidextensions.ViewHolder
-import edu.csueastbay.horizon.lucifer.ones.AppConstants
+import edu.csueastbay.horizon.lucifer.ones.ConstantVals
 import edu.csueastbay.horizon.lucifer.ones.ChatActivity
 import edu.csueastbay.horizon.lucifer.ones.R
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.PersonItem
@@ -37,7 +37,7 @@ class  PeopleFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         userListenerRegistration =
-                FirestoreUtil.addUsersListener(this.activity!!, this::updateRecyclerView)
+                FirestoreFirebase.addUsersListener(this.activity!!, this::updateRecyclerView)
         return inflater.inflate(R.layout.fragment_people, container, false)
 
     }
@@ -46,7 +46,7 @@ class  PeopleFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        FirestoreUtil.removeListener(userListenerRegistration)
+        FirestoreFirebase.removeListener(userListenerRegistration)
         shouldInitRecyclerView = true
 
     }
@@ -80,8 +80,8 @@ class  PeopleFragment : Fragment() {
     private val onItemClick = OnItemClickListener { item, view ->
         if (item is PersonItem) {
             startActivity<ChatActivity>(
-                    AppConstants.USER_ID to item.userId,
-                    AppConstants.USER_NAME to item.person.name
+                    ConstantVals.USER_ID to item.userId,
+                    ConstantVals.USER_NAME to item.person.name
             )
 
         }
