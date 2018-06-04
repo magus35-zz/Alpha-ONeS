@@ -223,12 +223,13 @@
 
     <Button
         android:id="@+id/matchingButton"
-        android:layout_width="89dp"
-        android:layout_height="46dp"
+        android:layout_width="91dp"
+        android:layout_height="56dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         android:text="Matching"
         android:textAppearance="@android:style/TextAppearance"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
