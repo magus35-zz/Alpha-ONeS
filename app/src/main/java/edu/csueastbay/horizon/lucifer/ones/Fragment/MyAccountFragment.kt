@@ -15,13 +15,16 @@ import com.example.lindsey.onesmessaging.util.StorageUtil
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import edu.csueastbay.horizon.lucifer.ones.Glide.GlideApp
+import edu.csueastbay.horizon.lucifer.ones.MatchHolder
 import edu.csueastbay.horizon.lucifer.ones.R
 import edu.csueastbay.horizon.lucifer.ones.SignInActivity
 import kotlinx.android.synthetic.main.fragment_my_account.*
 import kotlinx.android.synthetic.main.fragment_my_account.view.*
 import org.jetbrains.anko.clearTask
 import org.jetbrains.anko.newTask
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.support.v4.intentFor
+import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 import java.io.ByteArrayOutputStream
 
@@ -131,5 +134,14 @@ class MyAccountFragment : Fragment() {
                 }
             }
         }
+
+        matchingButton.setOnClickListener({
+                    startActivity<MatchHolder>()
+                }
+        )
+    }
+
+    private fun launchMatchingActivity() {
+        startActivity<MatchHolder>()
     }
 }
