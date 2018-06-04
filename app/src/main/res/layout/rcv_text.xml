@@ -26,7 +26,7 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
             tools:text="@string/demoMess" />
         <TextView
-            android:id="@+id/textView_message_time"
+            android:id="@+id/textView_time_message_sent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView_message_text"

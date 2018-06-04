@@ -1,12 +1,11 @@
 package edu.csueastbay.horizon.lucifer.ones
 
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import edu.csueastbay.horizon.lucifer.ones.Fragment.MyAccountFragment
-import edu.csueastbay.horizon.lucifer.ones.Fragment.PeopleFragment
+import edu.csueastbay.horizon.lucifer.ones.Frags.UserFrag
+import edu.csueastbay.horizon.lucifer.ones.Frags.PeopleFrag
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -17,12 +16,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     // creating the default fragment
-        replaceFragment(PeopleFragment())
+        replaceFragment(PeopleFrag())
 
         navigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_people -> {
-                    replaceFragment(PeopleFragment())
+                    replaceFragment(PeopleFrag())
                     true
                 }
                 R.id.navigation_events -> {
@@ -30,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_my_account -> {
-                    replaceFragment(MyAccountFragment())
+                    replaceFragment(UserFrag())
 
                     true
                 }

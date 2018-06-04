@@ -5,7 +5,7 @@
     android:background="#EEEEEE"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatActivity">
+    tools:context=".MessageActivity">
 
 
     <RelativeLayout
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab_send_image"
+            android:id="@+id/send_my_pic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -28,21 +28,21 @@
             android:layout_marginStart="8dp"
             android:tint="?attr/colorPrimaryDark"
             app:fabSize="mini"
-            app:srcCompat="@drawable/ic_image_black_24dp"
+            app:srcCompat="@drawable/imageplaceholder"
             android:layout_alignParentLeft="true" />
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/editText_message"
+            android:id="@+id/editText_current_message_to_send"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_toEndOf="@id/fab_send_image"
+            android:layout_toEndOf="@id/send_my_pic"
             android:background="@drawable/text_right"
             android:elevation="2dp"
             android:hint="Fire your message"
             android:padding="8dp"
-            android:layout_toRightOf="@id/fab_send_image"
+            android:layout_toRightOf="@id/send_my_pic"
             android:layout_marginRight="8dp" />
 
         <ImageView

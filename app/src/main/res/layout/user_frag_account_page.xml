@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.MyAccountFragment">
+    tools:context=".Frags.UserFrag">
 
     <ImageView
 
@@ -32,7 +32,7 @@
 
         app:layout_constraintVertical_bias="0.0"
 
-        app:srcCompat="@drawable/ic_account_circle_black_24dp" />
+        app:srcCompat="@drawable/account_profile_default" />
 
 
 
@@ -48,7 +48,7 @@
 
         android:layout_marginTop="32dp"
 
-        android:hint="My Name"
+        android:hint="@string/my_name"
 
         app:layout_constraintBottom_toBottomOf="parent"
 
@@ -79,7 +79,7 @@
 
         android:layout_marginTop="8dp"
 
-        android:hint="My Bio"
+        android:hint="@string/my_bio"
 
         android:maxHeight="150dp"
 
@@ -112,7 +112,7 @@
 
         android:layout_marginTop="8dp"
 
-        android:hint="My Age"
+        android:hint="@string/my_age"
 
         android:maxHeight="150dp"
 
@@ -152,7 +152,7 @@
 
 
 
-        android:text="Save"
+        android:text="@string/save"
 
         app:layout_constraintBottom_toBottomOf="parent"
 
@@ -166,7 +166,8 @@
 
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="0.982" />
+        app:layout_constraintVertical_bias="0.982"
+        tools:ignore="RtlHardcoded" />
 
 
 
@@ -189,7 +190,7 @@
         android:layout_marginTop="8dp"
 
 
-        android:text="Sign Out"
+        android:text="@string/sign_out"
 
         app:layout_constraintBottom_toBottomOf="parent"
 
@@ -203,7 +204,8 @@
 
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="0.982" />
+        app:layout_constraintVertical_bias="0.982"
+        tools:ignore="RtlHardcoded" />
 
     <EditText
         android:id="@+id/editText"

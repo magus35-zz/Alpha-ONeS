@@ -9,11 +9,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import com.xwray.groupie.kotlinandroidextensions.Item
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.ImageItem
-import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.PersonItem
+import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.UserModelItem
 import edu.csueastbay.horizon.lucifer.ones.recyclerview.item.TextItem
-import edu.csueastbay.horizon.lucifer.ones.systemTypes.*
+import edu.csueastbay.horizon.lucifer.ones.MessageTypes.*
 
-object FirestoreUtil{
+object FirebaseFirestore{
         private val firestoreInstance: FirebaseFirestore by lazy { FirebaseFirestore.getInstance()}
         private val currentUserDocRef: DocumentReference
 
@@ -69,7 +69,7 @@ object FirestoreUtil{
 
                     querySnapshot!!.documents.forEach {
                         if (it.id != FirebaseAuth.getInstance().currentUser?.uid)
-                            items.add(PersonItem(it.toObject(UserType::class.java)!!, it.id, context))
+                            items.add(UserModelItem(it.toObject(UserType::class.java)!!, it.id, context))
                     }
                     onListen(items)
                 }
@@ -94,7 +94,7 @@ object FirestoreUtil{
                     val currentUserId = FirebaseAuth.getInstance().currentUser!!.uid
 
                     val newChannel = chatChannelsCollectionRef.document()
-                    newChannel.set(ChatPortal(mutableListOf(currentUserId, otherUserId)))
+                    newChannel.set(MessageChannel(mutableListOf(currentUserId, otherUserId)))
                     // save the new chat
                     currentUserDocRef
                             .collection("engagedChatChannels")

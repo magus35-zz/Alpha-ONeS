@@ -48,8 +48,7 @@
 
             android:layout_marginStart="20dp"
 
-            tools:src="@drawable/ic_account_circle_black_24dp"
-            android:layout_marginLeft="20dp" />
+            tools:src="@drawable/account_profile_default"/>
 
 
 
@@ -71,9 +70,7 @@
 
             android:textAppearance="@style/Base.TextAppearance.AppCompat"
 
-            tools:text="Anna Faris"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/imageView_profile_picture" />
+            tools:text="Allie" />
 
 
 
@@ -97,9 +94,7 @@
 
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
 
-            tools:text="Super Hero By Day"
-            android:layout_marginLeft="2dp"
-            android:layout_alignLeft="@+id/textView_name" />
+            tools:text="Allie May" />
 
     </RelativeLayout>
 

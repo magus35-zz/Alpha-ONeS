@@ -31,7 +31,7 @@
 
         <ImageView
 
-            android:id="@+id/imageView_message_image"
+            android:id="@+id/imageView_image_for_message"
 
             android:layout_width="250dp"
 
@@ -47,19 +47,19 @@
 
             android:paddingTop="4dp"
 
-            tools:src="@drawable/ic_image_black_24dp" />
+            tools:src="@drawable/imageplaceholder" />
 
         <TextView
 
-            android:id="@+id/textView_message_time"
+            android:id="@+id/textView_time_message_sent"
 
             android:layout_width="wrap_content"
 
             android:layout_height="wrap_content"
 
-            android:layout_below="@id/imageView_message_image"
+            android:layout_below="@id/imageView_image_for_message"
 
-            android:layout_alignEnd="@id/imageView_message_image"
+            android:layout_alignEnd="@id/imageView_image_for_message"
 
             android:layout_marginEnd="8dp"
 
